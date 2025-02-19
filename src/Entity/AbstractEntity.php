@@ -10,7 +10,7 @@ abstract class AbstractEntity implements Entity
      * @var int
      * @JMS\Type("integer")
      * @JMS\SerializedName("id")
-     * @JMS\Groups({"response"})
+     * @JMS\Groups({"addRequest", "response"})
      */
     private $id;
 

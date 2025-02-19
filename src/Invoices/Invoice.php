@@ -759,7 +759,9 @@ final class Invoice extends DateAwareEntity
      */
     public function changeContractor(Contractor $contractor)
     {
-        $this->contractorId = null;
+        if ($contractor->id() === null) {
+            $this->contractorId = null;
+        }
         $this->contractor = $contractor;
         if ($this->contractorDetail) {
             $this->contractorDetail->updateWith($contractor);
